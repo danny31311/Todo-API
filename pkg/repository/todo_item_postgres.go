@@ -1,10 +1,10 @@
 package repository
 
 import (
+	todo_app "Todo-API"
 	"fmt"
 	"github.com/jmoiron/sqlx"
 	"strings"
-	todo_app "todo-app"
 )
 
 type TodoItemPostgres struct {

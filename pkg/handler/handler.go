@@ -1,11 +1,11 @@
 package handler
 
 import (
+	_ "Todo-API/docs"
+	"Todo-API/pkg/service"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	_ "todo-app/docs"
-	"todo-app/pkg/service"
 )
 
 type Handler struct {

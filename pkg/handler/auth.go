@@ -1,9 +1,9 @@
 package handler
 
 import (
+	todo_app "Todo-API"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	todo_app "todo-app"
 )
 
 // @Summary SignUp

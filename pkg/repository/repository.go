@@ -1,8 +1,8 @@
 package repository
 
 import (
+	todo_app "Todo-API"
 	"github.com/jmoiron/sqlx"
-	todo_app "todo-app"
 )
 
 type Authorization interface {

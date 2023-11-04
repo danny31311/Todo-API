@@ -1,4 +1,4 @@
-module todo-app
+module Todo-API
 
 go 1.20
 

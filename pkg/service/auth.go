@@ -1,14 +1,14 @@
 package service
 
 import (
+	todo_app "Todo-API"
+	"Todo-API/pkg/repository"
 	"crypto/sha1"
 	"errors"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"strconv"
 	"time"
-	todo_app "todo-app"
-	"todo-app/pkg/repository"
 )
 
 const (

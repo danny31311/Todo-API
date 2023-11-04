@@ -1,9 +1,9 @@
 package repository
 
 import (
+	todo_app "Todo-API"
 	"fmt"
 	"github.com/jmoiron/sqlx"
-	todo_app "todo-app"
 )
 
 type AuthPostgres struct {

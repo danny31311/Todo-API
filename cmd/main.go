@@ -1,6 +1,10 @@
 package main
 
 import (
+	"Todo-API"
+	"Todo-API/pkg/handler"
+	"Todo-API/pkg/repository"
+	"Todo-API/pkg/service"
 	"context"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
@@ -9,10 +13,6 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"todo-app"
-	"todo-app/pkg/handler"
-	"todo-app/pkg/repository"
-	"todo-app/pkg/service"
 )
 
 //@title Todo App API

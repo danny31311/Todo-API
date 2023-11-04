@@ -1,8 +1,8 @@
 package service
 
 import (
-	todo_app "todo-app"
-	"todo-app/pkg/repository"
+	todo_app "Todo-API"
+	"Todo-API/pkg/repository"
 )
 
 type TodoListService struct {
