@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
-	"strconv"
 	"time"
 )
 
@@ -67,22 +66,6 @@ func (s *AuthService) ParseToken(accessToken string) (int, error) {
 	}
 
 	return claims.UserId, nil
-
-}
-
-func (s *AuthService) generateTokens(userId int) (string, error) {
-	t := jwt.NewWithClaims(jwt.SigningMethodHS256,
-		jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(tokenTTL).Unix(),
-			IssuedAt:  time.Now().Unix(),
-			Subject:   strconv.Itoa(int(userId)),
-		})
-	accessToken, err := t.SignedString([]byte(signingKey))
-	if err != nil {
-		return "", err
-	}
-
-	return accessToken, nil
 
 }
 
