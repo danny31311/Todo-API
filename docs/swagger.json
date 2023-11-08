@@ -102,7 +102,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.UpdateItemInput"
+                            "$ref": "#/definitions/todo.UpdateItemInput"
                         }
                     }
                 ],
@@ -277,7 +277,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.TodoList"
+                            "$ref": "#/definitions/todo.TodoList"
                         }
                     }
                 ],
@@ -408,7 +408,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.UpdateListInput"
+                            "$ref": "#/definitions/todo.UpdateListInput"
                         }
                     }
                 ],
@@ -592,7 +592,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.TodoItem"
+                            "$ref": "#/definitions/todo.TodoItem"
                         }
                     },
                     {
@@ -717,7 +717,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.User"
+                            "$ref": "#/definitions/todo.User"
                         }
                     }
                 ],
@@ -780,7 +780,7 @@
                 }
             }
         },
-        "todo_app.TodoItem": {
+        "todo.TodoItem": {
             "type": "object",
             "required": [
                 "title"
@@ -800,7 +800,7 @@
                 }
             }
         },
-        "todo_app.TodoList": {
+        "todo.TodoList": {
             "type": "object",
             "required": [
                 "title"
@@ -817,7 +817,7 @@
                 }
             }
         },
-        "todo_app.UpdateItemInput": {
+        "todo.UpdateItemInput": {
             "type": "object",
             "properties": {
                 "description": {
@@ -831,7 +831,7 @@
                 }
             }
         },
-        "todo_app.UpdateListInput": {
+        "todo.UpdateListInput": {
             "type": "object",
             "properties": {
                 "description": {
@@ -842,7 +842,7 @@
                 }
             }
         },
-        "todo_app.User": {
+        "todo.User": {
             "type": "object",
             "required": [
                 "name",

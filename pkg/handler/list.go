@@ -1,7 +1,7 @@
 package handler
 
 import (
-	todo_app "Todo-API"
+	todo "Todo-API"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -14,7 +14,7 @@ import (
 // @ID create-list
 // @Accept json
 // @Produce json
-// @Param input body todo_app.TodoList true "list info"
+// @Param input body todo.TodoList true "list info"
 // @Success 200 {integer} integer 1
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
@@ -26,7 +26,7 @@ func (h *Handler) createList(c *gin.Context) {
 		return
 	}
 
-	var input todo_app.TodoList
+	var input todo.TodoList
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -45,7 +45,7 @@ func (h *Handler) createList(c *gin.Context) {
 }
 
 type GetAllListsResponse struct {
-	Data []todo_app.TodoList `json:"data"`
+	Data []todo.TodoList `json:"data"`
 }
 
 // @Summary Get All lists
@@ -120,7 +120,7 @@ func (h *Handler) getListById(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param list_id path int true "list ID"
-// @Param input body todo_app.UpdateListInput true "updated list info"
+// @Param input body todo.UpdateListInput true "updated list info"
 // @Success 200 {integer} integer 1
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
@@ -138,7 +138,7 @@ func (h *Handler) updateList(c *gin.Context) {
 		return
 	}
 
-	var input todo_app.UpdateListInput
+	var input todo.UpdateListInput
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return

@@ -1,30 +1,32 @@
 package service
 
 import (
-	todo_app "Todo-API"
+	todo "Todo-API"
 	"Todo-API/pkg/repository"
 )
 
+//go:generate mockgen -source=service.go -destination=mocks/mock.go
+
 type Authorization interface {
-	CreateUser(user todo_app.User) (int, error)
+	CreateUser(user todo.User) (int, error)
 	GenerateToken(username, password string) (string, error)
 	ParseToken(token string) (int, error)
 }
 
 type TodoList interface {
-	Create(userId int, list todo_app.TodoList) (int, error)
-	GetAll(userId int) ([]todo_app.TodoList, error)
-	GetById(userId, listId int) (todo_app.TodoList, error)
+	Create(userId int, list todo.TodoList) (int, error)
+	GetAll(userId int) ([]todo.TodoList, error)
+	GetById(userId, listId int) (todo.TodoList, error)
 	Delete(userId, listId int) error
-	Update(userId, listId int, input todo_app.UpdateListInput) error
+	Update(userId, listId int, input todo.UpdateListInput) error
 }
 
 type TodoItem interface {
-	Create(userId, listId int, item todo_app.TodoItem) (int, error)
-	GetAll(userId, listId int) ([]todo_app.TodoItem, error)
-	GetById(userId, itemId int) (todo_app.TodoItem, error)
+	Create(userId, listId int, item todo.TodoItem) (int, error)
+	GetAll(userId, listId int) ([]todo.TodoItem, error)
+	GetById(userId, itemId int) (todo.TodoItem, error)
 	Delete(userId, itemId int) error
-	Update(userId, itemId int, input todo_app.UpdateItemInput) error
+	Update(userId, itemId int, input todo.UpdateItemInput) error
 }
 
 type Service struct {

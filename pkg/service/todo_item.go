@@ -1,7 +1,7 @@
 package service
 
 import (
-	todo_app "Todo-API"
+	todo "Todo-API"
 	"Todo-API/pkg/repository"
 )
 
@@ -14,7 +14,7 @@ func NewTodoItemService(repo repository.TodoItem, listRepo repository.TodoList) 
 	return &TodoItemService{repo: repo, listRepo: listRepo}
 }
 
-func (s *TodoItemService) Create(userId, listId int, item todo_app.TodoItem) (int, error) {
+func (s *TodoItemService) Create(userId, listId int, item todo.TodoItem) (int, error) {
 
 	_, err := s.listRepo.GetById(userId, listId)
 	if err != nil {
@@ -24,11 +24,11 @@ func (s *TodoItemService) Create(userId, listId int, item todo_app.TodoItem) (in
 	return s.repo.Create(listId, item)
 }
 
-func (s *TodoItemService) GetAll(userId, listId int) ([]todo_app.TodoItem, error) {
+func (s *TodoItemService) GetAll(userId, listId int) ([]todo.TodoItem, error) {
 	return s.repo.GetAll(userId, listId)
 }
 
-func (s *TodoItemService) GetById(userId, listId int) (todo_app.TodoItem, error) {
+func (s *TodoItemService) GetById(userId, listId int) (todo.TodoItem, error) {
 	return s.repo.GetById(userId, listId)
 }
 
@@ -36,6 +36,6 @@ func (s *TodoItemService) Delete(userId, itemId int) error {
 	return s.repo.Delete(userId, itemId)
 }
 
-func (s *TodoItemService) Update(userId, itemId int, input todo_app.UpdateItemInput) error {
+func (s *TodoItemService) Update(userId, itemId int, input todo.UpdateItemInput) error {
 	return s.repo.Update(userId, itemId, input)
 }

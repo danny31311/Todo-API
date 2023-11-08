@@ -1,7 +1,7 @@
 package handler
 
 import (
-	todo_app "Todo-API"
+	todo "Todo-API"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -12,17 +12,17 @@ import (
 // @ID create-account
 // @Accept json
 // @Produce json
-// @Param input body todo_app.User true "account info"
+// @Param input body todo.User true "account info"
 // @Success 200 {integer} integer 1
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /auth/sign-up [post]
-func (h *Handler) singUp(c *gin.Context) {
-	var input todo_app.User
+func (h *Handler) signUp(c *gin.Context) {
+	var input todo.User
 
 	if err := c.BindJSON(&input); err != nil {
-		NewErrorResponse(c, http.StatusBadRequest, err.Error())
+		NewErrorResponse(c, http.StatusBadRequest, "invalid input body")
 		return
 	}
 

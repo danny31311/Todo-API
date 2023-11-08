@@ -1,7 +1,7 @@
 package handler
 
 import (
-	todo_app "Todo-API"
+	todo "Todo-API"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -14,7 +14,7 @@ import (
 // @ID create-item
 // @Accept json
 // @Produce json
-// @Param input body todo_app.TodoItem true "item info"
+// @Param input body todo.TodoItem true "item info"
 // @Param list_id path int true "list ID"
 // @Success 200 {integer} integer 1
 // @Failure 400,404 {object} errorResponse
@@ -32,7 +32,7 @@ func (h *Handler) createItem(c *gin.Context) {
 		NewErrorResponse(c, http.StatusBadRequest, "invalid id param")
 		return
 	}
-	var input todo_app.TodoItem
+	var input todo.TodoItem
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -122,7 +122,7 @@ func (h *Handler) getItemById(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param item_id path int true "item ID"
-// @Param input body todo_app.UpdateItemInput true "updated item info"
+// @Param input body todo.UpdateItemInput true "updated item info"
 // @Success 200 {integer} integer 1
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
@@ -140,7 +140,7 @@ func (h *Handler) updateItem(c *gin.Context) {
 		return
 	}
 
-	var input todo_app.UpdateItemInput
+	var input todo.UpdateItemInput
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return

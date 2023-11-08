@@ -108,7 +108,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.UpdateItemInput"
+                            "$ref": "#/definitions/todo.UpdateItemInput"
                         }
                     }
                 ],
@@ -283,7 +283,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.TodoList"
+                            "$ref": "#/definitions/todo.TodoList"
                         }
                     }
                 ],
@@ -414,7 +414,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.UpdateListInput"
+                            "$ref": "#/definitions/todo.UpdateListInput"
                         }
                     }
                 ],
@@ -598,7 +598,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.TodoItem"
+                            "$ref": "#/definitions/todo.TodoItem"
                         }
                     },
                     {
@@ -723,7 +723,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/todo_app.User"
+                            "$ref": "#/definitions/todo.User"
                         }
                     }
                 ],
@@ -786,7 +786,7 @@ const docTemplate = `{
                 }
             }
         },
-        "todo_app.TodoItem": {
+        "todo.TodoItem": {
             "type": "object",
             "required": [
                 "title"
@@ -806,7 +806,7 @@ const docTemplate = `{
                 }
             }
         },
-        "todo_app.TodoList": {
+        "todo.TodoList": {
             "type": "object",
             "required": [
                 "title"
@@ -823,7 +823,7 @@ const docTemplate = `{
                 }
             }
         },
-        "todo_app.UpdateItemInput": {
+        "todo.UpdateItemInput": {
             "type": "object",
             "properties": {
                 "description": {
@@ -837,7 +837,7 @@ const docTemplate = `{
                 }
             }
         },
-        "todo_app.UpdateListInput": {
+        "todo.UpdateListInput": {
             "type": "object",
             "properties": {
                 "description": {
@@ -848,7 +848,7 @@ const docTemplate = `{
                 }
             }
         },
-        "todo_app.User": {
+        "todo.User": {
             "type": "object",
             "required": [
                 "name",

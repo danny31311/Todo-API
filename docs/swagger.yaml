@@ -15,7 +15,7 @@ definitions:
     - password
     - username
     type: object
-  todo_app.TodoItem:
+  todo.TodoItem:
     properties:
       description:
         type: string
@@ -28,7 +28,7 @@ definitions:
     required:
     - title
     type: object
-  todo_app.TodoList:
+  todo.TodoList:
     properties:
       description:
         type: string
@@ -39,7 +39,7 @@ definitions:
     required:
     - title
     type: object
-  todo_app.UpdateItemInput:
+  todo.UpdateItemInput:
     properties:
       description:
         type: string
@@ -48,14 +48,14 @@ definitions:
       title:
         type: string
     type: object
-  todo_app.UpdateListInput:
+  todo.UpdateListInput:
     properties:
       description:
         type: string
       title:
         type: string
     type: object
-  todo_app.User:
+  todo.User:
     properties:
       name:
         type: string
@@ -170,7 +170,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/todo_app.UpdateItemInput'
+          $ref: '#/definitions/todo.UpdateItemInput'
       produces:
       - application/json
       responses:
@@ -244,7 +244,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/todo_app.TodoList'
+          $ref: '#/definitions/todo.TodoList'
       produces:
       - application/json
       responses:
@@ -368,7 +368,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/todo_app.UpdateListInput'
+          $ref: '#/definitions/todo.UpdateListInput'
       produces:
       - application/json
       responses:
@@ -448,7 +448,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/todo_app.TodoItem'
+          $ref: '#/definitions/todo.TodoItem'
       - description: list ID
         in: path
         name: list_id
@@ -533,7 +533,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/todo_app.User'
+          $ref: '#/definitions/todo.User'
       produces:
       - application/json
       responses:
